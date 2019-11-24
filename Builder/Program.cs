@@ -11,15 +11,15 @@ namespace Builder
     {
         static void Main(string[] args)
         {
-            var sandwich = new Sandwich();
-            sandwich.breadType = Breadtype.Wheat;
-            sandwich.chesseType = Chessetype.American;
-            sandwich.meatType = MeatType.Turkey;
-            sandwich.isToasted = true;
-            sandwich.hasMustard = true;
-            sandwich.hasMayo = false;
-            sandwich.vegetables = new List<string> { "Tomato", "Onion" };
-            sandwich.Display();
+            var firstSandwich = new SandwichMaker(new MySandwichBuilder());
+            firstSandwich.BuildSandwich();
+            var classicSandwich = firstSandwich.GetSandwich();
+            classicSandwich.Display();
+
+            var secondSandwich = new SandwichMaker(new ClubSandwichBuilder());
+            secondSandwich.BuildSandwich();
+            var clubSandwich = secondSandwich.GetSandwich();
+            clubSandwich.Display();
 
             Console.ReadKey();
         }
