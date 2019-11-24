@@ -8,25 +8,13 @@ namespace Builder
 {
     public class Sandwich
     {
-        private readonly Breadtype breadType;
-        private readonly bool isToasted;
-        private readonly Chessetype chesseType;
-        private readonly bool hasMustard;
-        private readonly MeatType meatType;
-        private readonly List<string> vegetables;
-        private readonly bool hasMayo;
-
-
-        public Sandwich(Breadtype breadtype, bool isToasted, Chessetype chessetype, bool hasMustard, MeatType meatType, List<string> vegetables, bool hasMayo)
-        {
-            this.breadType = breadtype;
-            this.isToasted = isToasted;
-            this.chesseType = chessetype;
-            this.hasMustard = hasMustard;
-            this.meatType = meatType;
-            this.vegetables = vegetables;
-            this.hasMayo = hasMayo;
-        }
+        public Breadtype breadType { get; set; }
+        public bool isToasted { get; set; }
+        public Chessetype chesseType { get; set; }
+        public bool hasMustard { get; set; }
+        public MeatType meatType { get; set; }
+        public List<string> vegetables { get; set; }
+        public bool hasMayo { get; set; }
 
         public void Display()
         {
