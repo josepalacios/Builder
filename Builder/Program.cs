@@ -6,7 +6,7 @@ namespace Builder
     {
         static void Main(string[] args)
         {
-            var firstSandwich = new SandwichMaker(new MySandwichBuilder());
+            var firstSandwich = new SandwichMaker(new BaconSandwichBuilder());
             firstSandwich.BuildSandwich();
             var classicSandwich = firstSandwich.GetSandwich();
             classicSandwich.Display();

@@ -3,7 +3,7 @@ using static Builder.Sandwich;
 
 namespace Builder
 {
-    public class MySandwichBuilder : SandwichBuilder
+    public class BaconSandwichBuilder : SandwichBuilder
     {
         public override void AddCondiments()
         {

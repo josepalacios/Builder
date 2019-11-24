@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClubSandwichBuilder.cs" />
-    <Compile Include="MySandwichBuilder.cs" />
+    <Compile Include="BaconSandwichBuilder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sandwich.cs" />
