@@ -16,7 +16,6 @@ namespace Builder
                 .Build();
             baconSandwich.Display();
 
-
             var clubSandwichbuilder = new BaconSandwichBuilder();
             var clubSandwich = clubSandwichbuilder
                 .PrepareBread()
@@ -26,7 +25,6 @@ namespace Builder
                 .Build();
             clubSandwich.Display();
 
-            
             Console.ReadKey();
         }
     }

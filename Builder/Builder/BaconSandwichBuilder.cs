@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using static Builder.Sandwich;
+﻿using Builder.Enumerables;
+using System.Collections.Generic;
 
 namespace Builder
 {
-    public class BaconSandwichBuilder
+    public class BaconSandwichBuilder : SandwichBuilder
     {
         private Sandwich _sandwich;
         public BaconSandwichBuilder()
@@ -13,30 +13,29 @@ namespace Builder
 
         public BaconSandwichBuilder AddCondiments()
         {
-            _sandwich.hasMayo = false;
-            _sandwich.hasMustard = true;
+            _sandwich.HasMayo = false;
+            _sandwich.HasMustard = true;
             return this;
         }
 
         public BaconSandwichBuilder ApplyMeatandChesse()
         {
-            _sandwich.chesseType = Chessetype.American;
+            _sandwich.chesseType = ChesseType.American;
             _sandwich.meatType = MeatType.Turkey;
             return this;
         }
         public BaconSandwichBuilder ApplyVegetables()
         {
-            _sandwich.vegetables = new List<string> { "Tomato", "Onion" };
+            _sandwich.Vegetables = new List<string> { "Tomato", "Onion" };
             return this;
         }
         public BaconSandwichBuilder PrepareBread()
         {
             _sandwich.breadType = Breadtype.White;
-            _sandwich.isToasted = true;
+            _sandwich.IsToasted = true;
             return this;
         }
-
-        public Sandwich Build()
+        public override Sandwich Build()
         {
             return _sandwich;
         }
