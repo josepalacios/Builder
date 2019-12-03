@@ -6,16 +6,27 @@ namespace Builder
     {
         static void Main(string[] args)
         {
-            var firstSandwich = new SandwichMaker(new BaconSandwichBuilder());
-            firstSandwich.BuildSandwich();
-            var classicSandwich = firstSandwich.GetSandwich();
-            classicSandwich.Display();
 
-            var secondSandwich = new SandwichMaker(new ClubSandwichBuilder());
-            secondSandwich.BuildSandwich();
-            var clubSandwich = secondSandwich.GetSandwich();
+            var baconSandwichbuilder = new BaconSandwichBuilder();
+            var baconSandwich = baconSandwichbuilder
+                .PrepareBread()
+                .ApplyMeatandChesse()
+                .ApplyVegetables()
+                .AddCondiments()
+                .Build();
+            baconSandwich.Display();
+
+
+            var clubSandwichbuilder = new BaconSandwichBuilder();
+            var clubSandwich = clubSandwichbuilder
+                .PrepareBread()
+                .ApplyMeatandChesse()
+                .ApplyVegetables()
+                .AddCondiments()
+                .Build();
             clubSandwich.Display();
 
+            
             Console.ReadKey();
         }
     }
