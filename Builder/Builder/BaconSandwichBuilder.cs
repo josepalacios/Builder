@@ -11,10 +11,9 @@ namespace Builder
             _sandwich = new Sandwich();
         }
 
-        public BaconSandwichBuilder AddCondiments()
+        public BaconSandwichBuilder AddCondiments(List<string> condiments)
         {
-            _sandwich.HasMayo = false;
-            _sandwich.HasMustard = true;
+            _sandwich.Condiments = condiments;
             return this;
         }
 
@@ -24,15 +23,14 @@ namespace Builder
             _sandwich.meatType = MeatType.Turkey;
             return this;
         }
-        public BaconSandwichBuilder ApplyVegetables()
+        public BaconSandwichBuilder ApplyVegetables(List<string> vegetables)
         {
-            _sandwich.Vegetables = new List<string> { "Tomato", "Onion" };
+            _sandwich.Vegetables = vegetables;
             return this;
         }
-        public BaconSandwichBuilder PrepareBread()
+        public BaconSandwichBuilder PrepareBread(Breadtype breadtype)
         {
-            _sandwich.breadType = Breadtype.White;
-            _sandwich.IsToasted = true;
+            _sandwich.breadType = breadtype;
             return this;
         }
         public override Sandwich Build()

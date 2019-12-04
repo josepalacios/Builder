@@ -12,17 +12,18 @@ namespace Builder
         public bool HasMustard { get; set; }
         public MeatType meatType { get; set; }
         public List<string> Vegetables { get; set; }
-        public bool HasMayo { get; set; }
+        public List<string> Condiments { get; set; }
 
         public void Display()
         {
             Console.WriteLine("Sandwich on {0} bread", breadType);
             if (IsToasted)
                 Console.WriteLine("Toasted");
-            if (HasMustard)
-                Console.WriteLine("With Mustard");
-            if (HasMayo)
-                Console.WriteLine("With Mayo");
+            Console.WriteLine("With Mustard");
+            Console.WriteLine("With Mayo");
+            foreach (var condiment in Condiments)
+                Console.WriteLine(" {0}", condiment);
+
             Console.WriteLine("Meat {0}", meatType);
             Console.WriteLine("Chesse {0}", chesseType);
             Console.WriteLine("Veggies :");

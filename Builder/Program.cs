@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Builder.Enumerables;
+using System;
+using System.Collections.Generic;
 
 namespace Builder
 {
@@ -9,19 +11,19 @@ namespace Builder
 
             var baconSandwichbuilder = new BaconSandwichBuilder();
             var baconSandwich = baconSandwichbuilder
-                .PrepareBread()
+                .PrepareBread(Breadtype.White)
                 .ApplyMeatandChesse()
-                .ApplyVegetables()
-                .AddCondiments()
+                .ApplyVegetables(new List<string> { "Tomato", "Onions"})
+                .AddCondiments(new List<string> { "Mayo", "Mustard" })
                 .Build();
             baconSandwich.Display();
 
-            var clubSandwichbuilder = new BaconSandwichBuilder();
+            var clubSandwichbuilder = new ClubSandwichBuilder();
             var clubSandwich = clubSandwichbuilder
-                .PrepareBread()
+                .PrepareBread(Breadtype.Wheat)
                 .ApplyMeatandChesse()
-                .ApplyVegetables()
-                .AddCondiments()
+                .ApplyVegetables(new List<string> {"Lettuce"})
+                .AddCondiments(new List<string> { "Mayo"})
                 .Build();
             clubSandwich.Display();
 
